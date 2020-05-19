@@ -55,7 +55,7 @@ def download_audio(bucket, key):
 
 def transcode_audio(local_source_audio, output_file):
     logger.debug('start transcode_audio()')
-    resp = subprocess.check_output([ffmpeg_bin, '-i', local_source_audio, '-vn', '-acodec', 'mp3', '-ar', '16000', '-y', output_file])
+    resp = subprocess.check_output([ffmpeg_bin, '-i', local_source_audio, '-vn', '-acodec', 'mp3', '-ar', '8000', '-y', output_file])
     logger.debug(str(resp, "utf-8"))
     logger.debug(str(subprocess.check_output(["file", output_file]), "utf-8"))
 
